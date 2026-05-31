@@ -16,6 +16,12 @@ public class FeeHeadEntity {
     @Column(name = "FEE_HEAD_NAME")
     private String feeHeadName;
 
+    @Column(name = "FEE_CODE")
+    private String feeCode;
+
+    @Column(name = "STATUS")
+    private Boolean status;
+
     @Column(name = "IS_REFUNDABLE")
     private Boolean isRefundable;
 
@@ -28,3 +34,9 @@ public class FeeHeadEntity {
     @Column(name = "MODIFIED_DATE")
     private LocalDateTime  modifiedDate;
 }
+/*
+Tuition Fee
+Transport Fee
+Hostel Fee
+Examination Fee
+Smart Class Fee*/

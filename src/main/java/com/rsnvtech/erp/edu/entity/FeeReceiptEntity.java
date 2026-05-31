@@ -7,16 +7,22 @@ import java.time.LocalDateTime;
 
 @Data
 @Entity
-@Table(name = "transaction_receipt")
-public class TransactionReceiptEntity {
+@Table(name = "fee_receipt")
+public class FeeReceiptEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    @Column(name = "TX_RECEIPT_ID")
-    private Long  txReceiptId;
+    @Column(name = "RECEIPT_ID")
+    private Long  receiptId;
 
     @Column(name = "STUDENT_ID")
     private Long studentId;
+
+    @Column(name = "RECEIPT_NUMBER")
+    private String receiptNumber;//Unique Number
+
+    @Column(name = "RECEIPT_DATE")
+    private LocalDateTime receiptDate;
 
     @Column(name = "PAYMENT_MODE")
     private String paymentMode;
@@ -24,6 +30,8 @@ public class TransactionReceiptEntity {
     @Column(name = "TRANSACTION_DATE")
     private LocalDateTime transactionDate;
 
+    @Column(name = "TRANSACTION_REFERENCE")
+    private String transactionReference;
 
     @Column(name = "AMOUNT_PAID")
     private Double amountPaid;

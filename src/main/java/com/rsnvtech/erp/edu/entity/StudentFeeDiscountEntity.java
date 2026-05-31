@@ -4,10 +4,11 @@ import jakarta.persistence.*;
 import lombok.Data;
 
 import java.time.LocalDateTime;
+
 @Data
 @Entity
-@Table(name = "student_fee_installment")
-public class StudentFeeInstallmentEntity {
+@Table(name = "student_fee_discount")
+public class StudentFeeDiscountEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "ID")
@@ -16,23 +17,14 @@ public class StudentFeeInstallmentEntity {
     @Column(name = "STUDENT_ID")
     private Long studentId;
 
-    @Column(name = "ACADEMIC_YEAR_ID")
-    private Long academicYearId;
-
     @Column(name = "FEE_HEAD_ID")
     private FeeHeadEntity feeHeadEntity;
 
-    @Column(name = "DUE_DATE")
-    private LocalDateTime dueDate;
+    @Column(name = "DISCOUNT_TYPE")
+    private String discountType;
 
-    @Column(name = "INSTALLMENT_AMOUNT")
-    private Double installmentAmount;
-
-    @Column(name = "INSTALLMENT_NUMBER")
-    private Integer installmentNumber;
-
-    @Column(name = "INSTALLMENT_NUMBER")
-    private String status; //
+    @Column(name = "DISCOUNT_AMOUNT")
+    private Double discountAmount;
 
     @Column(name = "CREATE_DATE")
     private LocalDateTime createDate;
@@ -40,8 +32,7 @@ public class StudentFeeInstallmentEntity {
     @Column(name = "MODIFIED_DATE")
     private LocalDateTime  modifiedDate;
 }
-/*  Status
-PENDING
-        PARTIAL
-PAID
-        OVERDUE*/
+/*
+10% concession
+₹5000 scholarship
+*/

@@ -1,8 +1,8 @@
-sever:
-  port: 8090
+server:
+  port: 8094
 spring:
   datasource:
-    url: jdbc:mysql://${MYSQL_HOST:localhost}:3306/erp_edu_tech
+    url: jdbc:mysql://localhost:3306/erp_edutech_fee
     username: root
     password: root
     driver-class-name: com.mysql.cj.jdbc.Driver # Use cj for modern drivers
