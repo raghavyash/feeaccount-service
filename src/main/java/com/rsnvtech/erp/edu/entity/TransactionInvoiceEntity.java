@@ -11,8 +11,8 @@ import java.time.LocalDateTime;
 public class TransactionInvoiceEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    @Column(name = "TX_INVOICE_ID")
-    private Long  txInvoiceId;
+    @Column(name = "ID")
+    private Long  id;
 
     @Column(name = "STUDENT_ID")
     private Long studentId;

@@ -12,8 +12,8 @@ public class TransactionInvoiceLineEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    @Column(name = "TX_INVOICE_LINE_ID")
-    private Long  txInvoiceLineId;
+    @Column(name = "ID")
+    private Long  id;
 
     @Column(name = "STUDENT_ID")
     private Long studentId;

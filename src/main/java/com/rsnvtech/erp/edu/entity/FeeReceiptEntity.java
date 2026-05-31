@@ -12,8 +12,8 @@ public class FeeReceiptEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    @Column(name = "RECEIPT_ID")
-    private Long  receiptId;
+    @Column(name = "ID")
+    private Long  id;
 
     @Column(name = "STUDENT_ID")
     private Long studentId;
