@@ -1,5 +1,6 @@
 package com.rsnvtech.erp.edu.config;
 
+import org.modelmapper.ModelMapper;
 import org.springframework.boot.web.client.RestTemplateBuilder;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -16,4 +17,10 @@ public class RestTemplateConfig {
                 .setReadTimeout(Duration.ofSeconds(5))
                 .build();
     }
+
+    @Bean
+    public ModelMapper modelMapper() {
+        return new ModelMapper();
+    }
+
 }

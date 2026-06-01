@@ -17,8 +17,6 @@ public class StudentFeeDiscountEntity {
     @Column(name = "STUDENT_ID")
     private Long studentId;
 
-    @Column(name = "FEE_HEAD_ID")
-    private FeeHeadEntity feeHeadEntity;
 
     @Column(name = "DISCOUNT_TYPE")
     private String discountType;

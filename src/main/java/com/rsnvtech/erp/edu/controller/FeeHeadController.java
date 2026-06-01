@@ -17,7 +17,7 @@ public class FeeHeadController {
 
     @PostMapping({"/save"})
     public ResponseEntity<String> saveCategory(@RequestBody FeeHeadModel model) {
-        Boolean result = true;
+        Boolean result = feeHeadService.saveFeeHead(model);
         if (result)
             return new ResponseEntity("Successfully Save", HttpStatus.OK);
         else

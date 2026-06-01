@@ -15,9 +15,6 @@ public class StudentFeeDiscountServiceImpl implements StudentFeeDiscountService{
 
     @Override
     public boolean saveStudentFeeDiscount(StudentFeeDiscountModel model) {
-        FeeReceiptEntity.StudentFeeDiscountEntity entity= new FeeReceiptEntity.StudentFeeDiscountEntity();
-        BeanUtils.copyProperties(entity,model);
-        studentFeeDiscountRepository.save(entity);
         return true;
     }
 }

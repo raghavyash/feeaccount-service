@@ -3,6 +3,7 @@ package com.rsnvtech.erp.edu.model;
 import lombok.Data;
 
 import java.time.LocalDateTime;
+import java.util.List;
 
 @Data
 public class FeeStructureModel {
@@ -10,8 +11,9 @@ public class FeeStructureModel {
     private Long academicYearId;
     private Long classId;
     private Long FeeHeadId;
-    private Double amount;
+    private String status;
     private LocalDateTime dueDate;
     private LocalDateTime createDate;
     private LocalDateTime  modifiedDate;
+    private List<FeeStructureDetailModel> feeStructureDetails;
 }
