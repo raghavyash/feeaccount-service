@@ -1,5 +1,6 @@
-package com.rsnvtech.erp.edu.entity;
+package com.rsnvtech.erp.edu.entity.simple;
 
+import com.rsnvtech.erp.edu.entity.FeeHeadEntity;
 import jakarta.persistence.*;
 import lombok.Data;
 

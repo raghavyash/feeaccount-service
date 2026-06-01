@@ -1,4 +1,4 @@
-package com.rsnvtech.erp.edu.entity;
+package com.rsnvtech.erp.edu.entity.installment;
 
 import jakarta.persistence.*;
 import lombok.Data;
@@ -6,8 +6,8 @@ import lombok.Data;
 import java.time.LocalDateTime;
 @Data
 @Entity
-@Table(name = "student_fee_assignment")
-public class StudentFeeAssignmentEntity {
+@Table(name = "fee_installment_student")
+public class FeeInstallmentStudentAssignmentEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
@@ -17,8 +17,9 @@ public class StudentFeeAssignmentEntity {
     @Column(name = "STUDENT_ID")
     private Long studentId;
 
-    @Column(name = "FEE_STRUCTURE_ID")
-    private FeeStructureEntity feeStructureEntity;
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "FEE_INSTALLMENT_ID")
+    private FeeInstallmentEntity feeInstallment;
 
     @Column(name = "DUE_DATE")
     private LocalDateTime dueDate;

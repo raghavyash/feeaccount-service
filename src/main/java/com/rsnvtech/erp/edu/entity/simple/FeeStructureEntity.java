@@ -1,9 +1,11 @@
-package com.rsnvtech.erp.edu.entity;
+package com.rsnvtech.erp.edu.entity.simple;
 
 import jakarta.persistence.*;
 import lombok.Data;
 
 import java.time.LocalDateTime;
+import java.util.ArrayList;
+import java.util.List;
 
 @Data
 @Entity
@@ -20,12 +22,11 @@ public class FeeStructureEntity {
     @Column(name = "CLASS_ID")
     private Long classId;
 
-    @ManyToOne(fetch = FetchType.LAZY) // Many orders belong to one user
-    @JoinColumn(name = "FEE_HEAD_ID") // Specifies the foreign key column in the 'orders' table
-    private FeeHeadEntity feeHeadEntity;
+    @Column(name = "STATUS")
+    private String status;
 
-    @Column(name = "AMOUNT")
-    private Double amount;
+    @OneToMany(mappedBy = "feeStructure", cascade = CascadeType.ALL, orphanRemoval = true)
+    private List<FeeStructureDetailEntity> feeStructureDetails = new ArrayList<>();
 
     @Column(name = "DUE_DATE")
     private LocalDateTime dueDate;

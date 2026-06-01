@@ -1,4 +1,4 @@
-package com.rsnvtech.erp.edu.entity;
+package com.rsnvtech.erp.edu.entity.installment;
 
 import jakarta.persistence.*;
 import lombok.Data;
@@ -6,21 +6,19 @@ import lombok.Data;
 import java.time.LocalDateTime;
 @Data
 @Entity
-@Table(name = "student_fee_installment")
-public class StudentFeeInstallmentEntity {
+@Table(name = "fee_installment")
+public class FeeInstallmentEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "ID")
     private Long  id;
 
-    @Column(name = "STUDENT_ID")
-    private Long studentId;
+    @Column(name = "CLASS_ID")
+    private Long classId;
 
     @Column(name = "ACADEMIC_YEAR_ID")
     private Long academicYearId;
 
-    @Column(name = "FEE_HEAD_ID")
-    private FeeHeadEntity feeHeadEntity;
 
     @Column(name = "DUE_DATE")
     private LocalDateTime dueDate;
@@ -29,9 +27,9 @@ public class StudentFeeInstallmentEntity {
     private Double installmentAmount;
 
     @Column(name = "INSTALLMENT_NUMBER")
-    private Integer installmentNumber;
+    private String installmentNumber;
 
-    @Column(name = "INSTALLMENT_NUMBER")
+    @Column(name = "STATUS")
     private String status; //
 
     @Column(name = "CREATE_DATE")

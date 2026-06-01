@@ -1,10 +1,10 @@
-package com.rsnvtech.erp.edu.entity;
+package com.rsnvtech.erp.edu.entity.simple;
 
+import com.rsnvtech.erp.edu.entity.FeeHeadEntity;
 import jakarta.persistence.*;
 import lombok.Data;
 
 import java.time.LocalDateTime;
-
 @Data
 @Entity
 @Table(name = "student_fee_discount")
@@ -32,7 +32,3 @@ public class StudentFeeDiscountEntity {
     @Column(name = "MODIFIED_DATE")
     private LocalDateTime  modifiedDate;
 }
-/*
-10% concession
-₹5000 scholarship
-*/

@@ -1,14 +1,14 @@
-package com.rsnvtech.erp.edu.entity;
+package com.rsnvtech.erp.edu.entity.simple;
 
 import jakarta.persistence.*;
 import lombok.Data;
 
 import java.time.LocalDateTime;
-
 @Data
 @Entity
-@Table(name = "transaction_invoice")
-public class TransactionInvoiceEntity {
+@Table(name = "student_fee_assignment")
+public class StudentFeeAssignmentEntity {
+
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "ID")
@@ -17,18 +17,15 @@ public class TransactionInvoiceEntity {
     @Column(name = "STUDENT_ID")
     private Long studentId;
 
-    @Column(name = "INVOICE_DATE")
-    private LocalDateTime invoiceDate;
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "FEE_STRUCTURE_ID")
+    private FeeStructureEntity feeStructure;
 
     @Column(name = "DUE_DATE")
     private LocalDateTime dueDate;
 
-
-    @Column(name = "TOTAL_AMOUNT")
-    private Double totalAmount;
-
-    @Column(name = "STATUS")
-    private String status;//(ENUM: Unpaid, Partial, Paid)
+    @Column(name = "ASSIGN_AMOUNT")
+    private Double assignAmount;
 
     @Column(name = "CREATE_DATE")
     private LocalDateTime createDate;
