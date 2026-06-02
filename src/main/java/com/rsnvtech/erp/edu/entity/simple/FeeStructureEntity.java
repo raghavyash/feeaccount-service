@@ -25,8 +25,8 @@ public class FeeStructureEntity {
     @Column(name = "STATUS")
     private String status;
 
-    @OneToMany(mappedBy = "feeStructure", cascade = CascadeType.ALL, orphanRemoval = true)
-    private List<FeeStructureDetailEntity> feeStructureDetails = new ArrayList<>();
+    @OneToMany(mappedBy = "feeStructure",cascade = CascadeType.ALL)
+    private List<FeeStructureDetailEntity> feeStructureDetails;
 
     @Column(name = "DUE_DATE")
     private LocalDateTime dueDate;

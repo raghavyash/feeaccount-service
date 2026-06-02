@@ -17,7 +17,7 @@ public class FeeStructureDetailEntity {
     @JoinColumn(name = "FEE_HEAD_ID")
     private FeeHeadEntity feeHeadEntity;
 
-    @ManyToOne(fetch = FetchType.LAZY)
+    @ManyToOne(cascade = CascadeType.PERSIST)
     @JoinColumn(name = "FEE_STRUCTURE_ID")
     private FeeStructureEntity feeStructure;
 
